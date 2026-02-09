@@ -1,0 +1,392 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    color: #fff;
+    animation: pageFade 1s ease;
+    overflow-x: hidden;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.1);
+    animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+nav a {
+    margin-left: 35px;
+    color: #ccc;
+    text-decoration: none;
+    position: relative;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-radius: 10px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -8px;
+    left: 0;
+    background: rgba(255,215,0,0.1);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffed4e;
+    transform: translateY(-3px);
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+
+.hero {
+    margin-top: 80px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    animation: fadeInUp 1s ease 0.3s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    animation: textReveal 0.8s ease 0.5s backwards;
+}
+
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    to {
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.hero-content h1 span {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 950;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #aaa;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease 0.7s backwards;
+    letter-spacing: 0.5px;
+}
+
+.hero-image {
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(255,215,0,0.2));
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotateZ(-2deg);
+    }
+    50% {
+        transform: translateY(-30px) rotateZ(2deg);
+    }
+}
+
+.hero-image img {
+    max-width: 400px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    transition: filter 0.4s;
+}
+
+.hero-image:hover img {
+    filter: drop-shadow(0 30px 60px rgba(255,215,0,0.3));
+}
+
+
+.cta {
+    padding: 18px 48px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 0 30px rgba(255,215,0,0.4), inset 0 0 20px rgba(255,255,255,0.2);
+    color: #000;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInUp 0.8s ease 0.9s backwards;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.cta:hover::before {
+    left: 100%;
+}
+
+.cta:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 0 50px rgba(255,215,0,0.8), inset 0 0 20px rgba(255,255,255,0.3);
+}
+
+.cta:active {
+    transform: scale(0.98);
+}
+
+
+.products {
+    padding: 80px 60px;
+    text-align: center;
+    animation: fadeInUp 1s ease 0.5s backwards;
+}
+
+.products h2 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e, #fff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.card {
+    background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(255,215,0,0.02));
+    border: 1px solid rgba(255,215,0,0.2);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease calc(0.6s + var(--card-index, 0) * 0.1s) backwards;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
+    transition: left 0.6s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-20px) scale(1.05);
+    border-color: rgba(255,215,0,0.5);
+    box-shadow: 0 20px 50px rgba(255,215,0,0.3), 0 0 40px rgba(255,215,0,0.2);
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05));
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05));
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(50%, 50%) rotate(45deg);
+    }
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,215,0,0.1));
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+    color: #fff;
+}
+
+.card:hover h3 {
+    color: #ffed4e;
+}
+
+.card p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffd700;
+    transition: all 0.3s;
+}
+
+.card:hover p {
+    font-size: 24px;
+    color: #ffed4e;
+    text-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+
+
+footer {
+    padding: 50px 40px;
+    text-align: center;
+    color: #888;
+    border-top: 1px solid rgba(255,215,0,0.1);
+    background: rgba(255,215,0,0.02);
+    transition: all 0.4s;
+    animation: fadeInUp 0.8s ease 0.8s backwards;
+}
+
+footer:hover {
+    color: #aaa;
+    background: rgba(255,215,0,0.05);
+}
+
+footer p {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+@keyframes pageFade {
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+    nav a {
+        margin-left: 15px;
+    }
+}
