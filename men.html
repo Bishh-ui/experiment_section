@@ -25,8 +25,102 @@
 </header>
 
 <section class="men-section" id="men">
-    <h2>Men's Wear</h2>
+    <div class="men-hero">
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <h2>Men's Wear — Modern Craft</h2>
+                <p>Timeless silhouettes, elevated details. Discover our curated men’s collection.</p>
+            </div>
+            <div class="hero-media"><img src="image/hoodie.png" alt="Men's hero"></div>
+        </div>
+    </div>
 
+    <div class="men-content">
+    <aside class="sidebar">
+        <h3>Filters</h3>
+        <div class="filter-bar">
+        <input id="search" type="search" placeholder="Search products, e.g. 'hoodie'" />
+        <div class="categories" role="tablist" aria-label="Categories">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="Hoodies">Hoodies</button>
+            <button class="cat-btn" data-cat="Jackets">Jackets</button>
+            <button class="cat-btn" data-cat="Shirts">Shirts</button>
+            <button class="cat-btn" data-cat="Shoes">Shoes</button>
+            <button class="cat-btn" data-cat="Jeans">Jeans</button>
+        </div>
+        <select id="sort">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+        </select>
+        </div>
+
+        <div class="extra-filters">
+            <h4>Size</h4>
+            <div class="sizes">
+                <label><input type="checkbox" value="XS"> XS</label>
+                <label><input type="checkbox" value="S"> S</label>
+                <label><input type="checkbox" value="M"> M</label>
+                <label><input type="checkbox" value="L"> L</label>
+                <label><input type="checkbox" value="XL"> XL</label>
+            </div>
+
+            <h4>Price</h4>
+            <div class="price-range">
+                <input type="range" id="priceRange" min="0" max="200" value="200">
+                <div class="price-value">Up to $<span id="priceValue">200</span></div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="products-area">
+    </div>
+
+    <!-- Product grid (filterable) -->
+    <div class="product-grid" id="productGrid">
+        <div class="product-item" data-category="Hoodies" data-price="49" data-name="Urban Hoodie" data-images="image/hoodie.png,image/white_shirt.png" data-desc="Cozy cotton-blend hoodie with brushed interior." data-sku="H-URB-01">
+            <img src="image/hoodie.png" alt="Urban Hoodie">
+            <h4>Urban Hoodie</h4>
+            <p class="price">$49</p>
+        </div>
+
+        <div class="product-item" data-category="Jackets" data-price="129" data-name="Black Jacket" data-images="image/black_jacket.png,image/hoodie.png" data-desc="Water-resistant bomber jacket with quilted lining." data-sku="J-BLK-02">
+            <img src="image/black_jacket.png" alt="Black Jacket">
+            <h4>Black Jacket</h4>
+            <p class="price">$129</p>
+        </div>
+
+        <div class="product-item" data-category="Shirts" data-price="39" data-name="White Shirt" data-images="image/white_shirt.png,image/hoodie.png" data-desc="Crisp cotton shirt with slim tailoring for modern fit." data-sku="S-WHT-03">
+            <img src="image/white_shirt.png" alt="White Shirt">
+            <h4>White Shirt</h4>
+            <p class="price">$39</p>
+        </div>
+
+        <div class="product-item" data-category="Jeans" data-price="79" data-name="Blue Jeans" data-images="image/hoodie.png,image/black_jacket.png" data-desc="Premium denim with stretch for comfort and durability." data-sku="JN-BLU-04">
+            <img src="image/hoodie.png" alt="Blue Jeans">
+            <h4>Blue Jeans</h4>
+            <p class="price">$79</p>
+        </div>
+
+        <div class="product-item" data-category="Shoes" data-price="89" data-name="Casual Shoes" data-images="image/white_shirt.png,image/black_jacket.png" data-desc="Lightweight sole with breathable canvas upper." data-sku="SH-CS-05">
+            <img src="image/white_shirt.png" alt="Casual Shoes">
+            <h4>Casual Shoes</h4>
+            <p class="price">$89</p>
+        </div>
+
+        <div class="product-item" data-category="Hoodies" data-price="59" data-name="Zip Hoodie" data-images="image/hoodie.png,image/white_shirt.png" data-desc="Full-zip hoodie with metal hardware and side pockets." data-sku="H-ZIP-06">
+            <img src="image/hoodie.png" alt="Zip Hoodie">
+            <h4>Zip Hoodie</h4>
+            <p class="price">$59</p>
+        </div>
+    </div>
+    </div>
+
+    </main>
+
+    </div>
+
+    <!-- Retain original feature cards below for brand overview -->
     <div class="fashion-cards">
         <div class="fashion-card">
             <h3>Hoodies</h3>
@@ -64,6 +158,9 @@
 <footer>
     <p>© 2026 ASWATHAMA. All Rights Reserved.</p>
 </footer>
+</footer>
+
+<script src="js/men.js"></script>
 
 </body>
 </html>

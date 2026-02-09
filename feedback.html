@@ -50,9 +50,35 @@
     </div>
 </section>
 
+<section class="products">
+    <h2>Customers Also Bought</h2>
+    <div class="filter-bar">
+        <input type="search" placeholder="Search products..." />
+        <div class="categories">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="Hoodies">Hoodies</button>
+        </div>
+        <select>
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+        </select>
+    </div>
+
+    <div class="product-grid">
+        <div class="card product-item" data-category="Hoodies" data-price="59" data-name="Zip Hoodie">
+            <div class="card-img"><img src="image/hoodie.png" alt="Zip Hoodie" loading="lazy"></div>
+            <h3>Zip Hoodie</h3>
+            <p>$59</p>
+        </div>
+    </div>
+</section>
+
 <footer>
     <p>© 2026 ASWATHAMA. All Rights Reserved.</p>
 </footer>
+
+<script src="js/site.js"></script>
 
 </body>
 </html>

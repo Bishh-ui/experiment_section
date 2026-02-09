@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Confirmed | ASWATHAMA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ASWATHAMA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+
+  <main style="padding:120px 60px; text-align:center;">
+    <div class="confirm-card">
+      <h2>Thank you — your order is placed!</h2>
+      <p id="orderId"></p>
+      <div id="orderDetails" style="margin-top:18px;text-align:left;display:inline-block;max-width:720px;"></div>
+      <div style="margin-top:20px;"><a href="index.html" class="cta">Continue Shopping</a></div>
+    </div>
+  </main>
+
+  <script src="js/site.js"></script>
+  <script>
+    // read orderId from querystring
+    const params = new URLSearchParams(location.search);
+    const id = params.get('orderId');
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+    const order = orders.find(o => o.id === id);
+    if (order) {
+      document.getElementById('orderId').textContent = 'Order #: ' + order.id;
+      const d = document.getElementById('orderDetails');
+      d.innerHTML = `<strong>Name:</strong> ${order.name}<br><strong>Email:</strong> ${order.email}<br><strong>Items:</strong><br>`;
+      order.items.forEach(it => d.innerHTML += `&nbsp;&nbsp;• ${it.name} x ${it.qty} — $${it.price}<br>`);
+      d.innerHTML += `<br><strong>Total:</strong> $${order.total.toFixed(2)}`;
+    } else {
+      document.getElementById('orderId').textContent = 'Order not found.';
+    }
+  </script>
+</body>
+</html>
