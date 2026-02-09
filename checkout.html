@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout | ASWATHAMA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ASWATHAMA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+
+  <main class="checkout-page" style="padding:120px 60px;">
+    <h2>Checkout</h2>
+    <div class="checkout-grid">
+      <section class="checkout-form">
+        <h3>Shipping & Contact</h3>
+        <form id="checkoutForm">
+          <label>Full name<input name="name" required></label>
+          <label>Email<input name="email" type="email" required></label>
+          <label>Phone<input name="phone" required></label>
+          <label>Address<textarea name="address" rows="3" required></textarea></label>
+          <div style="display:flex;gap:12px;">
+            <label>City<input name="city" required></label>
+            <label>ZIP<input name="zip" required></label>
+          </div>
+
+          <h4>Payment (mock)</h4>
+          <label>Card number<input name="card" placeholder="4242 4242 4242 4242" required></label>
+          <div style="display:flex;gap:12px;">
+            <label>Expiry<input name="exp" placeholder="MM/YY" required></label>
+            <label>CVC<input name="cvc" required></label>
+          </div>
+
+          <button class="cta" type="submit">Place Order</button>
+        </form>
+      </section>
+
+      <aside class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="orderList" class="order-list"></div>
+        <div class="summary-footer">
+          <div>Subtotal: <strong id="subtotal">$0.00</strong></div>
+          <div>Shipping: <strong>$0.00</strong></div>
+          <div>Total: <strong id="total">$0.00</strong></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="js/site.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

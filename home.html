@@ -36,9 +36,42 @@
     </div>
 </section>
 
+<section class="products">
+    <h2>Featured Picks</h2>
+    <div class="filter-bar">
+        <input type="search" placeholder="Search products..." />
+        <div class="categories">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="Hoodies">Hoodies</button>
+            <button class="cat-btn" data-cat="Jackets">Jackets</button>
+        </div>
+        <select>
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+        </select>
+    </div>
+
+    <div class="product-grid">
+        <div class="card product-item" data-category="Hoodies" data-price="49" data-name="Urban Hoodie">
+            <div class="card-img"><img src="image/hoodie.png" alt="Urban Hoodie" loading="lazy"></div>
+            <h3>Urban Hoodie</h3>
+            <p>$49</p>
+        </div>
+
+        <div class="card product-item" data-category="Jackets" data-price="129" data-name="Black Jacket">
+            <div class="card-img"><img src="image/black_jacket.png" alt="Black Jacket" loading="lazy"></div>
+            <h3>Black Jacket</h3>
+            <p>$129</p>
+        </div>
+    </div>
+</section>
+
 <footer>
     <p>© 2026 ASWATHAMA. All Rights Reserved.</p>
 </footer>
+
+<script src="js/site.js"></script>
 
 </body>
 </html>

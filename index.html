@@ -40,26 +40,42 @@
 
 <section class="products">
     <h2>Featured Collection</h2>
+    <div class="filter-bar">
+        <input type="search" placeholder="Search products, e.g. 'jacket'" />
+        <div class="categories">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="Jackets">Jackets</button>
+            <button class="cat-btn" data-cat="Shirts">Shirts</button>
+            <button class="cat-btn" data-cat="Hoodies">Hoodies</button>
+        </div>
+        <select>
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+        </select>
+    </div>
 
     <div class="product-grid">
-        <div class="card">
+        <div class="card product-item" data-category="Jackets" data-price="4999" data-name="Classic Black Jacket">
             <div class="card-img">
-                <img src="image/black_jacket.png" alt="Classic Black Jacket">
+                <img src="image/black_jacket.png" alt="Classic Black Jacket" loading="lazy">
             </div>
             <h3>Classic Black Jacket</h3>
             <p>₹4,999</p>
         </div>
 
-        <div class="card">
+        <div class="card product-item" data-category="Shirts" data-price="2499" data-name="Premium White Shirt">
             <div class="card-img">
-                <img src="image/white_shirt.png" alt="Premium White Shirt">
+                <img src="image/white_shirt.png" alt="Premium White Shirt" loading="lazy">
             </div>
             <h3>Premium White Shirt</h3>
             <p>₹2,499</p>
         </div>
 
-        <div class="card">
-            <div class="card-img"></div>
+        <div class="card product-item" data-category="Hoodies" data-price="3299" data-name="Urban Street Hoodie">
+            <div class="card-img">
+                <img src="image/hoodie.png" alt="Urban Street Hoodie" loading="lazy">
+            </div>
             <h3>Urban Street Hoodie</h3>
             <p>₹3,299</p>
         </div>
@@ -69,6 +85,8 @@
 <footer>
     <p>© 2026 LUXE. All Rights Reserved.</p>
 </footer>
+
+<script src="js/site.js"></script>
 
 </body>
 </html>

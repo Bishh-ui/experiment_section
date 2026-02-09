@@ -54,9 +54,42 @@
     </div>
 </section>
 
+<section class="products">
+    <h2>Explore Products</h2>
+    <div class="filter-bar">
+        <input type="search" placeholder="Find product or collection..." />
+        <div class="categories">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="Street Essentials">Street Essentials</button>
+            <button class="cat-btn" data-cat="Luxury Minimal">Luxury Minimal</button>
+        </div>
+        <select>
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+        </select>
+    </div>
+
+    <div class="product-grid">
+        <div class="card product-item" data-category="Street Essentials" data-price="39" data-name="Essential Tee">
+            <div class="card-img"><img src="image/white_shirt.png" alt="Essential Tee" loading="lazy"></div>
+            <h3>Essential Tee</h3>
+            <p>$39</p>
+        </div>
+
+        <div class="card product-item" data-category="Luxury Minimal" data-price="199" data-name="Minimal Coat">
+            <div class="card-img"><img src="image/black_jacket.png" alt="Minimal Coat" loading="lazy"></div>
+            <h3>Minimal Coat</h3>
+            <p>$199</p>
+        </div>
+    </div>
+</section>
+
 <footer>
     <p>© 2026 ASWATHAMA. All Rights Reserved.</p>
 </footer>
+
+<script src="js/site.js"></script>
 
 </body>
 </html>
